@@ -23,8 +23,8 @@
 
 -(void)add:(NSString *)key
 {
-    if (self.head.key == nil) {
-        self.head.key = key;
+    if (self.head.key == nil) { //if a key for the head does not exist
+        self.head.key = key; //give that head a key with whatever string is passed in
         NSLog(@"%@", self.head.key);
         
         return;
@@ -32,15 +32,15 @@
     
     ListItem *tracker = self.head;
     
-    while (tracker.next != nil) {
+    while (tracker.next != nil) { //if the tracker .next is not nill(meaning it still has a next item)
         NSLog(@"%@", tracker.key);
-        tracker = tracker.next;
+        tracker = tracker.next; //have the tracker equal the next item.
     }
     
     NSLog(@"%@", tracker.key);
     ListItem *newItem = [[ListItem alloc]init];
     
-    newItem.key = key;
+    newItem.key = key; //add the key to the new item
     tracker.next = newItem;
 
     newItem.previous = tracker;
