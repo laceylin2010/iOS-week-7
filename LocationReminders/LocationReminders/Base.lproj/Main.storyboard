@@ -23,7 +23,7 @@
                             <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rYL-OZ-L4c">
                                 <rect key="frame" x="20" y="550" width="79" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="dkO-aA-ayA"/>
+                                    <constraint firstAttribute="height" constant="30" id="lvk-ef-9Mj"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <state key="normal" title="Space Needle"/>
@@ -34,7 +34,7 @@
                             <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="752" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wei-uR-2kf">
                                 <rect key="frame" x="499" y="550" width="81" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="91j-iG-BSd"/>
+                                    <constraint firstAttribute="height" constant="30" id="2zK-Gf-FdS"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <state key="normal" title="Grand Canyon"/>
@@ -43,7 +43,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yxu-Kr-wJL">
-                                <rect key="frame" x="162" y="553" width="243" height="27"/>
+                                <rect key="frame" x="252.5" y="551" width="95" height="27"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="27" id="aXA-VM-hDG"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <state key="normal" title="Statue of Liberty"/>
                                 <connections>
@@ -53,19 +56,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Wei-uR-2kf" firstAttribute="leading" secondItem="yxu-Kr-wJL" secondAttribute="trailing" constant="94" id="2fX-Xw-sOb"/>
-                            <constraint firstItem="yxu-Kr-wJL" firstAttribute="leading" secondItem="rYL-OZ-L4c" secondAttribute="trailing" constant="63" id="DOv-b9-arl"/>
-                            <constraint firstAttribute="trailing" secondItem="6em-S2-5yq" secondAttribute="trailing" constant="20" id="Jsb-LH-ohv"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="rYL-OZ-L4c" secondAttribute="bottom" constant="20" id="MAY-q7-DPN"/>
-                            <constraint firstItem="rYL-OZ-L4c" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="Wae-qN-BPN"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Wei-uR-2kf" secondAttribute="bottom" constant="20" id="Wpg-Al-DGY"/>
-                            <constraint firstAttribute="trailing" secondItem="Wei-uR-2kf" secondAttribute="trailing" constant="20" id="bZj-dE-hLt"/>
-                            <constraint firstItem="yxu-Kr-wJL" firstAttribute="leading" secondItem="rYL-OZ-L4c" secondAttribute="trailing" constant="63" id="fdz-Mn-RAN"/>
-                            <constraint firstItem="Wei-uR-2kf" firstAttribute="top" secondItem="6em-S2-5yq" secondAttribute="bottom" constant="32" id="gPV-xa-Yy6"/>
-                            <constraint firstItem="Wei-uR-2kf" firstAttribute="leading" secondItem="yxu-Kr-wJL" secondAttribute="trailing" constant="94" id="r9i-RG-GnR"/>
-                            <constraint firstItem="6em-S2-5yq" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="wcu-Ag-4ie"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="yxu-Kr-wJL" secondAttribute="bottom" constant="20" id="zPP-YI-ywv"/>
-                            <constraint firstItem="6em-S2-5yq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="ziM-wj-ddE"/>
+                            <constraint firstItem="yxu-Kr-wJL" firstAttribute="centerX" secondItem="6em-S2-5yq" secondAttribute="centerX" id="7hB-oD-eb4"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="yxu-Kr-wJL" secondAttribute="bottom" constant="22" id="9AY-oC-0S7"/>
+                            <constraint firstItem="Wei-uR-2kf" firstAttribute="top" secondItem="6em-S2-5yq" secondAttribute="bottom" constant="32" id="Smo-R3-6Qm"/>
+                            <constraint firstAttribute="trailing" secondItem="Wei-uR-2kf" secondAttribute="trailing" constant="20" id="ToZ-Ws-smr"/>
+                            <constraint firstItem="6em-S2-5yq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="Xcp-Wj-HQG"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Wei-uR-2kf" secondAttribute="bottom" constant="20" id="bWo-L6-ZtM"/>
+                            <constraint firstAttribute="trailing" secondItem="6em-S2-5yq" secondAttribute="trailing" constant="20" id="cW3-Uz-Cn9"/>
+                            <constraint firstItem="rYL-OZ-L4c" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="gUU-1w-3VN"/>
+                            <constraint firstItem="6em-S2-5yq" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="h0Z-H9-4tP"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="rYL-OZ-L4c" secondAttribute="bottom" constant="20" id="tfp-HK-f12"/>
                         </constraints>
                     </view>
                     <connections>

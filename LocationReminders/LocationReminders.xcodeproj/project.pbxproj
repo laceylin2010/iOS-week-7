@@ -30,6 +30,9 @@
 		AF5F867E1C9721400086CA82 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF5F867D1C9721400086CA82 /* AudioToolbox.framework */; };
 		AF5F86801C97214A0086CA82 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF5F867F1C97214A0086CA82 /* Foundation.framework */; };
 		AF5F86831C973E2A0086CA82 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF5F86821C973E2A0086CA82 /* MapKit.framework */; };
+		AF5F86981C9778720086CA82 /* Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = AF5F86971C9778720086CA82 /* Stack.m */; };
+		AF5F869E1C9780870086CA82 /* Queue.m in Sources */ = {isa = PBXBuildFile; fileRef = AF5F869D1C9780870086CA82 /* Queue.m */; };
+		AF5F86A11C97B8DE0086CA82 /* ListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AF5F86A01C97B8DE0086CA82 /* ListItem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +63,12 @@
 		AF5F867D1C9721400086CA82 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		AF5F867F1C97214A0086CA82 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AF5F86821C973E2A0086CA82 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		AF5F86961C9778720086CA82 /* Stack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stack.h; sourceTree = "<group>"; };
+		AF5F86971C9778720086CA82 /* Stack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stack.m; sourceTree = "<group>"; };
+		AF5F869C1C9780870086CA82 /* Queue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Queue.h; sourceTree = "<group>"; };
+		AF5F869D1C9780870086CA82 /* Queue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Queue.m; sourceTree = "<group>"; };
+		AF5F869F1C97B8DE0086CA82 /* ListItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListItem.h; sourceTree = "<group>"; };
+		AF5F86A01C97B8DE0086CA82 /* ListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListItem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +128,7 @@
 				AF5F86561C9720270086CA82 /* LaunchScreen.storyboard */,
 				AF5F86591C9720270086CA82 /* Info.plist */,
 				AF5F86481C9720270086CA82 /* Supporting Files */,
+				AF5F868C1C9765F90086CA82 /* Code Challenges */,
 			);
 			path = LocationReminders;
 			sourceTree = "<group>";
@@ -153,6 +163,19 @@
 				AF5F866B1C9720F70086CA82 /* libsqlite3.0.tbd */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AF5F868C1C9765F90086CA82 /* Code Challenges */ = {
+			isa = PBXGroup;
+			children = (
+				AF5F86961C9778720086CA82 /* Stack.h */,
+				AF5F86971C9778720086CA82 /* Stack.m */,
+				AF5F869F1C97B8DE0086CA82 /* ListItem.h */,
+				AF5F86A01C97B8DE0086CA82 /* ListItem.m */,
+				AF5F869C1C9780870086CA82 /* Queue.h */,
+				AF5F869D1C9780870086CA82 /* Queue.m */,
+			);
+			name = "Code Challenges";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,8 +257,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF5F869E1C9780870086CA82 /* Queue.m in Sources */,
 				AF5F86501C9720270086CA82 /* ViewController.m in Sources */,
+				AF5F86A11C97B8DE0086CA82 /* ListItem.m in Sources */,
 				AF5F864D1C9720270086CA82 /* AppDelegate.m in Sources */,
+				AF5F86981C9778720086CA82 /* Stack.m in Sources */,
 				AF5F864A1C9720270086CA82 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
