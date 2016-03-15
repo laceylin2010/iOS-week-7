@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="eHL-vt-lEh">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -18,7 +18,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="6em-S2-5yq">
-                                <rect key="frame" x="20" y="20" width="560" height="498"/>
+                                <rect key="frame" x="20" y="64" width="560" height="454"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="1pq-TD-2dk" appends="YES" id="yUX-KQ-jo8"/>
+                                </connections>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rYL-OZ-L4c">
                                 <rect key="frame" x="20" y="550" width="79" height="30"/>
@@ -43,7 +47,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yxu-Kr-wJL">
-                                <rect key="frame" x="252.5" y="551" width="95" height="27"/>
+                                <rect key="frame" x="252" y="551" width="95" height="27"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="27" id="aXA-VM-hDG"/>
                                 </constraints>
@@ -68,11 +72,54 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="rYL-OZ-L4c" secondAttribute="bottom" constant="20" id="tfp-HK-f12"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="CXo-do-ROi"/>
                     <connections>
                         <outlet property="mapView" destination="6em-S2-5yq" id="hab-iM-YFU"/>
+                        <segue destination="eJr-hn-npI" kind="show" identifier="DetailViewController" id="hgR-6r-VP8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="1pq-TD-2dk">
+                    <connections>
+                        <action selector="handleLongPressedGesture:" destination="BYZ-38-t0r" id="Ngx-3e-Be4"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1222" y="277"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="Uno-dD-Df2">
+            <objects>
+                <viewController id="eJr-hn-npI" customClass="DetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Lz9-f7-Ddx"/>
+                        <viewControllerLayoutGuide type="bottom" id="YRT-PR-TOs"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hGJ-kY-xDp">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vbF-Wl-LAs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1881" y="277"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ySc-rn-FMc">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eHL-vt-lEh" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vtS-Nu-cil">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="LWq-YA-JRL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jpN-gJ-MSp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="410" y="277"/>
         </scene>
