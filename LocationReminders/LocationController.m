@@ -32,10 +32,12 @@ dispatch_once(&onceToken, ^{
         _locationManager.distanceFilter = 100;
     }
     
-    [_locationManager requestWhenInUseAuthorization];
+    [_locationManager requestAlwaysAuthorization];
     
     return self;
 }
+
+#pragma mark - locationManager
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations
 {
@@ -43,9 +45,10 @@ dispatch_once(&onceToken, ^{
     
 }
 
-
-
-
+-(void)locationManager:(CLLocationManager *)manager didEnterRegion:(CLRegion *)region
+{
+//    NSLog(@"%@", __FUNCTION__);
+}
 
 
 @end

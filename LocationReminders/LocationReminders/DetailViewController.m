@@ -13,6 +13,9 @@
 @interface DetailViewController ()
 
 
+@property (weak, nonatomic) IBOutlet UITextField *radiusLabel;
+@property (weak, nonatomic) IBOutlet UITextField *nameLabel;
+
 @end
 
 @implementation DetailViewController
@@ -32,24 +35,34 @@
 
 -(void)viewDidAppear:(BOOL)animated
 {
+    
     [super viewDidAppear:animated];
+    
+}
+
+
+- (IBAction)saveLocationButton:(id)sender //when the user clicks save, its going to send the data back to the MKCircle and change radius based on users input
+{
     Reminder *reminder = [[Reminder alloc]init];
-    reminder.name = @"get food";
-    reminder.radius = @100;
+    reminder.name = self.nameLabel.text;;
+    reminder.radius = (NSNumber *)self.radiusLabel.text;
     reminder.location = [PFGeoPoint geoPointWithLatitude:self.coordinate.latitude longitude:self.coordinate.longitude];
     
-    if (self.completion) {
+    __weak typeof (self) weakSelf = self;
+    if (weakSelf.completion) {
         if ([CLLocationManager isMonitoringAvailableForClass:[CLCircularRegion class]]) {
-            CLCircularRegion *region = [[CLCircularRegion alloc]initWithCenter:self.coordinate radius:100 identifier:@"Get Food"];
+            CLCircularRegion *region = [[CLCircularRegion alloc]initWithCenter:self.coordinate radius:self.radiusLabel.text.floatValue identifier:reminder.name];
             [[[LocationController sharedController]locationManager]startMonitoringForRegion:region];
-            self.completion([MKCircle circleWithCenterCoordinate:self.coordinate radius:100]);
+            weakSelf.completion([MKCircle circleWithCenterCoordinate:self.coordinate radius:self.radiusLabel.text.floatValue]);
+            
             [[self navigationController]popViewControllerAnimated:YES];
-
         }
     }
     
-    //user should be entering this information.
-    //when clicking save need to verify validated data
+
 }
+
+
+
 
 @end
