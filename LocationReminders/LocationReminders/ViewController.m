@@ -9,11 +9,15 @@
 #import "ViewController.h"
 #import "LocationController.h"
 #import "DetailViewController.h"
+#import <Parse/Parse.h>
+#import <ParseUI/ParseUI.h>
+
 @import MapKit;
 @import CoreLocation;
 
 
-@interface ViewController () <MKMapViewDelegate>
+
+@interface ViewController () <MKMapViewDelegate, PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (strong, nonatomic) CLLocationManager* locationManager;
@@ -26,8 +30,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self login];
     [self setupMapView];
     [self.mapView setDelegate:self];
+    
 
 }
 
@@ -55,6 +61,42 @@
 {
     [super viewDidAppear:animated];
 
+}
+
+-(void)login
+{
+    if (![PFUser currentUser]) {
+        PFLogInViewController *loginViewController = [[PFLogInViewController alloc]init];
+        loginViewController.delegate = self;
+        loginViewController.signUpController.delegate = self;
+        [self presentViewController:loginViewController animated:YES completion:nil];
+    } else {
+        [self setupAdditionUI];
+    }
+}
+
+-(void)setupAdditionUI
+{
+    UIBarButtonItem *signOutButton = [[UIBarButtonItem alloc]initWithTitle:@"Sign Out" style:UIBarButtonItemStylePlain target:self action:@selector(signOut)];
+    self.navigationItem.leftBarButtonItem = signOutButton;
+}
+
+-(void)signOut
+{
+    [PFUser logOut];
+    [self login];
+}
+
+-(void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+    [self setupAdditionUI];
+}
+
+-(void)signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+    [self setupAdditionUI];
 }
 
 -(void)setupMapView
@@ -141,12 +183,26 @@
             DetailViewController *detailViewController = (DetailViewController *)segue.destinationViewController;
             detailViewController.annotationTitle = annotationView.annotation.title;
             detailViewController.coordinate = annotationView.annotation.coordinate;
+            detailViewController.completion = ^(MKCircle *circle){
+                [self.mapView addOverlay:circle];
+
+            };
         }
         
     }
     
 }
 
+-(MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay
+{
+    MKCircleRenderer *renderer = [[MKCircleRenderer alloc]initWithOverlay:overlay];
+    renderer.strokeColor = [UIColor blueColor];
+    renderer.fillColor = [UIColor redColor];
+    renderer.alpha = 0.5;
+    
+    return renderer;
+    
+}
 
 
 @end

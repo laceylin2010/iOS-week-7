@@ -36,6 +36,7 @@
 		AF8E93F51C989A1600E2F723 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF8E93F41C989A1600E2F723 /* DetailViewController.m */; };
 		AF8E93F81C98A17E00E2F723 /* LocationController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF8E93F71C98A17E00E2F723 /* LocationController.m */; };
 		AF8E93FB1C98CD1D00E2F723 /* Anagrams.m in Sources */ = {isa = PBXBuildFile; fileRef = AF8E93FA1C98CD1D00E2F723 /* Anagrams.m */; };
+		AF8E93FF1C99D0EE00E2F723 /* Reminder.m in Sources */ = {isa = PBXBuildFile; fileRef = AF8E93FE1C99D0EE00E2F723 /* Reminder.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +79,8 @@
 		AF8E93F71C98A17E00E2F723 /* LocationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocationController.m; path = ../LocationController.m; sourceTree = "<group>"; };
 		AF8E93F91C98CD1D00E2F723 /* Anagrams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Anagrams.h; sourceTree = "<group>"; };
 		AF8E93FA1C98CD1D00E2F723 /* Anagrams.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Anagrams.m; sourceTree = "<group>"; };
+		AF8E93FD1C99D0EE00E2F723 /* Reminder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reminder.h; sourceTree = "<group>"; };
+		AF8E93FE1C99D0EE00E2F723 /* Reminder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reminder.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,14 +131,13 @@
 		AF5F86471C9720270086CA82 /* LocationReminders */ = {
 			isa = PBXGroup;
 			children = (
+				AF8E93FD1C99D0EE00E2F723 /* Reminder.h */,
+				AF8E93FE1C99D0EE00E2F723 /* Reminder.m */,
 				AF8E93F61C98A17E00E2F723 /* LocationController.h */,
 				AF8E93F71C98A17E00E2F723 /* LocationController.m */,
 				AF5F864B1C9720270086CA82 /* AppDelegate.h */,
 				AF5F864C1C9720270086CA82 /* AppDelegate.m */,
-				AF5F864E1C9720270086CA82 /* ViewController.h */,
-				AF5F864F1C9720270086CA82 /* ViewController.m */,
-				AF8E93F31C989A1600E2F723 /* DetailViewController.h */,
-				AF8E93F41C989A1600E2F723 /* DetailViewController.m */,
+				AF8E93FC1C99B33500E2F723 /* Controllers */,
 				AF5F86511C9720270086CA82 /* Main.storyboard */,
 				AF5F86541C9720270086CA82 /* Assets.xcassets */,
 				AF5F86561C9720270086CA82 /* LaunchScreen.storyboard */,
@@ -191,6 +193,17 @@
 				AF8E93FA1C98CD1D00E2F723 /* Anagrams.m */,
 			);
 			name = "Code Challenges";
+			sourceTree = "<group>";
+		};
+		AF8E93FC1C99B33500E2F723 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AF5F864E1C9720270086CA82 /* ViewController.h */,
+				AF5F864F1C9720270086CA82 /* ViewController.m */,
+				AF8E93F31C989A1600E2F723 /* DetailViewController.h */,
+				AF8E93F41C989A1600E2F723 /* DetailViewController.m */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,6 +288,7 @@
 				AF8E93FB1C98CD1D00E2F723 /* Anagrams.m in Sources */,
 				AF5F869E1C9780870086CA82 /* Queue.m in Sources */,
 				AF5F86501C9720270086CA82 /* ViewController.m in Sources */,
+				AF8E93FF1C99D0EE00E2F723 /* Reminder.m in Sources */,
 				AF5F86A11C97B8DE0086CA82 /* ListItem.m in Sources */,
 				AF5F864D1C9720270086CA82 /* AppDelegate.m in Sources */,
 				AF8E93F81C98A17E00E2F723 /* LocationController.m in Sources */,

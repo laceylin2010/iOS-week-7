@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
+#import "Reminder.h"
 
 @interface AppDelegate ()
 
@@ -28,6 +29,7 @@
 
 -(void)setUpParse
 {
+
     ParseClientConfiguration* configuration = [ParseClientConfiguration configurationWithBlock:^(id<ParseMutableClientConfiguration>  _Nonnull configuration) {
         configuration.applicationId = @"fdskfjdskj";
         configuration.clientKey = @"fdsjkaf";

@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="6em-S2-5yq">
-                                <rect key="frame" x="20" y="64" width="560" height="454"/>
+                                <rect key="frame" x="20" y="84" width="560" height="434"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="1pq-TD-2dk" appends="YES" id="yUX-KQ-jo8"/>
@@ -68,7 +68,7 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Wei-uR-2kf" secondAttribute="bottom" constant="20" id="bWo-L6-ZtM"/>
                             <constraint firstAttribute="trailing" secondItem="6em-S2-5yq" secondAttribute="trailing" constant="20" id="cW3-Uz-Cn9"/>
                             <constraint firstItem="rYL-OZ-L4c" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="gUU-1w-3VN"/>
-                            <constraint firstItem="6em-S2-5yq" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="h0Z-H9-4tP"/>
+                            <constraint firstItem="6em-S2-5yq" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="h0Z-H9-4tP"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="rYL-OZ-L4c" secondAttribute="bottom" constant="20" id="tfp-HK-f12"/>
                         </constraints>
                     </view>

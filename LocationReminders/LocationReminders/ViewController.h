@@ -10,8 +10,8 @@
 
 @interface ViewController : UIViewController
 
-//-(void)requestPermissions;
 -(void)setupMapView;
+
 
 
 
