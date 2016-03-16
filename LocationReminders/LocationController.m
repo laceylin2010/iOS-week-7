@@ -40,7 +40,7 @@ dispatch_once(&onceToken, ^{
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations
 {
     [self.delegate locationControllerDidUpdateLocation:[locations lastObject]];
-    [self setLocation:[locations lastObject]];
+    
 }
 
 

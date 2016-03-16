@@ -35,6 +35,7 @@
 		AF5F86A11C97B8DE0086CA82 /* ListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = AF5F86A01C97B8DE0086CA82 /* ListItem.m */; };
 		AF8E93F51C989A1600E2F723 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF8E93F41C989A1600E2F723 /* DetailViewController.m */; };
 		AF8E93F81C98A17E00E2F723 /* LocationController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF8E93F71C98A17E00E2F723 /* LocationController.m */; };
+		AF8E93FB1C98CD1D00E2F723 /* Anagrams.m in Sources */ = {isa = PBXBuildFile; fileRef = AF8E93FA1C98CD1D00E2F723 /* Anagrams.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +76,8 @@
 		AF8E93F41C989A1600E2F723 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		AF8E93F61C98A17E00E2F723 /* LocationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocationController.h; path = ../LocationController.h; sourceTree = "<group>"; };
 		AF8E93F71C98A17E00E2F723 /* LocationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocationController.m; path = ../LocationController.m; sourceTree = "<group>"; };
+		AF8E93F91C98CD1D00E2F723 /* Anagrams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Anagrams.h; sourceTree = "<group>"; };
+		AF8E93FA1C98CD1D00E2F723 /* Anagrams.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Anagrams.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +187,8 @@
 				AF5F86A01C97B8DE0086CA82 /* ListItem.m */,
 				AF5F869C1C9780870086CA82 /* Queue.h */,
 				AF5F869D1C9780870086CA82 /* Queue.m */,
+				AF8E93F91C98CD1D00E2F723 /* Anagrams.h */,
+				AF8E93FA1C98CD1D00E2F723 /* Anagrams.m */,
 			);
 			name = "Code Challenges";
 			sourceTree = "<group>";
@@ -267,6 +272,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF8E93FB1C98CD1D00E2F723 /* Anagrams.m in Sources */,
 				AF5F869E1C9780870086CA82 /* Queue.m in Sources */,
 				AF5F86501C9720270086CA82 /* ViewController.m in Sources */,
 				AF5F86A11C97B8DE0086CA82 /* ListItem.m in Sources */,
