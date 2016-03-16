@@ -103,7 +103,6 @@
                                 <rect key="frame" x="20" y="128" width="560" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Pjb-iQ-OiX"/>
-                                    <constraint firstAttribute="width" constant="560" id="r2d-jV-vlH"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -111,17 +110,16 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Radius" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dgd-YD-rXu">
                                 <rect key="frame" x="20" y="175" width="560" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="560" id="B7h-ck-dcM"/>
                                     <constraint firstAttribute="height" constant="30" id="wKT-gE-Hd0"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VPP-hw-gfj">
-                                <rect key="frame" x="226" y="224" width="149" height="30"/>
+                                <rect key="frame" x="261" y="224" width="79" height="30"/>
                                 <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="149" id="Pho-Ya-rs9"/>
+                                    <constraint firstAttribute="width" constant="79" id="981-Wz-uZC"/>
                                 </constraints>
                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Save"/>
@@ -132,23 +130,17 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="OlU-FG-5Xs" firstAttribute="leading" secondItem="hGJ-kY-xDp" secondAttribute="leading" constant="20" id="0qG-tm-yWH"/>
-                            <constraint firstItem="VPP-hw-gfj" firstAttribute="leading" secondItem="hGJ-kY-xDp" secondAttribute="leading" constant="226" id="3pU-OB-tHo"/>
                             <constraint firstItem="Dgd-YD-rXu" firstAttribute="top" secondItem="OlU-FG-5Xs" secondAttribute="bottom" constant="17" id="Ab1-OS-0iC"/>
-                            <constraint firstAttribute="trailing" secondItem="OlU-FG-5Xs" secondAttribute="trailing" constant="20" id="G3y-vH-YeX"/>
-                            <constraint firstAttribute="trailing" secondItem="Dgd-YD-rXu" secondAttribute="trailing" constant="20" id="KC6-wl-0vu"/>
+                            <constraint firstAttribute="trailing" secondItem="OlU-FG-5Xs" secondAttribute="trailing" constant="20" id="IDg-IG-dFh"/>
                             <constraint firstItem="OlU-FG-5Xs" firstAttribute="top" secondItem="Lz9-f7-Ddx" secondAttribute="bottom" constant="64" id="NYf-hN-H1M"/>
+                            <constraint firstItem="OlU-FG-5Xs" firstAttribute="centerX" secondItem="hGJ-kY-xDp" secondAttribute="centerX" id="QQc-PK-Jre"/>
                             <constraint firstItem="VPP-hw-gfj" firstAttribute="top" secondItem="Dgd-YD-rXu" secondAttribute="bottom" constant="19" id="Qaq-jI-hre"/>
                             <constraint firstItem="VPP-hw-gfj" firstAttribute="centerX" secondItem="hGJ-kY-xDp" secondAttribute="centerX" id="Sv4-QU-Vnw"/>
-                            <constraint firstAttribute="trailing" secondItem="VPP-hw-gfj" secondAttribute="trailing" constant="225" id="YE2-R6-oDG"/>
-                            <constraint firstItem="Dgd-YD-rXu" firstAttribute="leading" secondItem="hGJ-kY-xDp" secondAttribute="leading" constant="20" id="hGh-Vu-4Uy"/>
+                            <constraint firstAttribute="trailing" secondItem="Dgd-YD-rXu" secondAttribute="trailing" constant="20" id="XjM-bu-3VJ"/>
+                            <constraint firstItem="Dgd-YD-rXu" firstAttribute="centerX" secondItem="hGJ-kY-xDp" secondAttribute="centerX" id="e6m-mf-Okr"/>
+                            <constraint firstItem="Dgd-YD-rXu" firstAttribute="leading" secondItem="hGJ-kY-xDp" secondAttribute="leading" constant="20" id="fef-Gp-q1G"/>
+                            <constraint firstItem="OlU-FG-5Xs" firstAttribute="leading" secondItem="hGJ-kY-xDp" secondAttribute="leading" constant="20" id="w1h-WF-ftW"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="3pU-OB-tHo"/>
-                                <exclude reference="YE2-R6-oDG"/>
-                            </mask>
-                        </variation>
                     </view>
                     <connections>
                         <outlet property="nameLabel" destination="OlU-FG-5Xs" id="mhi-lb-2ce"/>
