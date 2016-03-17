@@ -16,8 +16,6 @@
 @import MapKit;
 @import CoreLocation;
 
-
-
 @interface ViewController () <MKMapViewDelegate, PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate, LocationControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;

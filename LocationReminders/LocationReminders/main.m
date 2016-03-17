@@ -32,9 +32,9 @@ int main(int argc, char * argv[]) {
 //        [secondTest removeFirstIn];
 //        [secondTest removeFirstIn];
 //        [secondTest removeFirstIn];
-        Wednesday *thirdTest =[[Wednesday alloc]init];
-        [thirdTest grabTheNumbers:@"Hello0123World1239"];
-//        [thirdTest grabTheNumbers:@"] add more examples;
+//        Wednesday *thirdTest =[[Wednesday alloc]init];
+//        [thirdTest grabTheNumbers:@"Hello0123World1239"];
+
         
 
 

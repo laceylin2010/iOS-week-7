@@ -7,6 +7,8 @@
 //
 
 #import "LocationController.h"
+@import UIKit;
+
 
 @implementation LocationController
 
@@ -47,7 +49,14 @@ dispatch_once(&onceToken, ^{
 
 -(void)locationManager:(CLLocationManager *)manager didEnterRegion:(CLRegion *)region
 {
-//    NSLog(@"%@", __FUNCTION__);
+
+    NSLog(@"User entered Region");
+    UILocalNotification *localNotification = [[UILocalNotification alloc]init];
+    
+    localNotification.alertTitle = @"You entered the matrix";
+    localNotification.alertBody = @"remember the matrix is not real";
+    [[UIApplication sharedApplication]presentLocalNotificationNow: localNotification];
+    
 }
 
 

@@ -23,7 +23,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSLog(@"Latitude: %f Longitude: %f", self.annotation.coordinate.latitude, self.annotation.coordinate.longitude);
+//    NSLog(@"Latitude: %f Longitude: %f", self.annotation.coordinate.latitude, self.annotation.coordinate.longitude);
 }
 
 - (void)didReceiveMemoryWarning
@@ -40,7 +40,7 @@
 }
 
 
-- (IBAction)saveLocationButton:(id)sender //when the user clicks save, its going to send the data back to the MKCircle and change radius based on users input
+- (IBAction)saveLocationButton:(id)sender
 {
     Reminder *reminder = [[Reminder alloc]init];
     reminder.name = self.nameLabel.text;
@@ -48,17 +48,19 @@
     reminder.radius = (NSNumber *)self.radiusLabel.text;
     reminder.location = [PFGeoPoint geoPointWithLatitude:self.annotation.coordinate.latitude longitude:self.annotation.coordinate.longitude];
     
-    if (self.completion) {
-        if ([CLLocationManager isMonitoringAvailableForClass:[CLCircularRegion class]]) {
-            CLCircularRegion *region = [[CLCircularRegion alloc]initWithCenter:self.annotation.coordinate radius:self.radiusLabel.text.floatValue identifier:reminder.name];
-            [[[LocationController sharedController]locationManager]startMonitoringForRegion:region];
-            self.completion([MKCircle circleWithCenterCoordinate:self.annotation.coordinate radius:self.radiusLabel.text.floatValue]);
-            
-            [[self navigationController]popViewControllerAnimated:YES];
+    [reminder saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+        if (error == nil && succeeded) {
+            if (self.completion) {
+                if ([CLLocationManager isMonitoringAvailableForClass:[CLCircularRegion class]]) {
+                    CLCircularRegion *region = [[CLCircularRegion alloc]initWithCenter:self.annotation.coordinate radius:self.radiusLabel.text.floatValue identifier:reminder.name];
+                    [[[LocationController sharedController]locationManager]startMonitoringForRegion:region];
+                    self.completion([MKCircle circleWithCenterCoordinate:self.annotation.coordinate radius:self.radiusLabel.text.floatValue]);
+                    
+                    [[self navigationController]popViewControllerAnimated:YES];
+                }
+            }
         }
-    }
-    
-
+    }];
 }
 
 
