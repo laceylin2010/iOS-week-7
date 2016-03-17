@@ -131,7 +131,8 @@
             MKCircle *circle = [MKCircle circleWithCenterCoordinate:coordinate radius: object.radius.floatValue];
             
             newPoint.coordinate = coordinate;
-            newPoint.title = newPoint.title;
+             //adding title to the pin
+            //add to reminders if noting exists
 
             [self.mapView addAnnotation: newPoint];
             [self.mapView addOverlay:circle];
