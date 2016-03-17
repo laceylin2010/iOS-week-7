@@ -23,8 +23,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSLog(@"%@", self.annotationTitle);
-    NSLog(@"Latitude: %f Longitude: %f", self.coordinate.latitude, self.coordinate.longitude);
+    NSLog(@"Latitude: %f Longitude: %f", self.annotation.coordinate.latitude, self.annotation.coordinate.longitude);
 }
 
 - (void)didReceiveMemoryWarning
@@ -44,16 +43,16 @@
 - (IBAction)saveLocationButton:(id)sender //when the user clicks save, its going to send the data back to the MKCircle and change radius based on users input
 {
     Reminder *reminder = [[Reminder alloc]init];
-    reminder.name = self.nameLabel.text;;
+    reminder.name = self.nameLabel.text;
+    self.annotation.title = self.nameLabel.text;
     reminder.radius = (NSNumber *)self.radiusLabel.text;
-    reminder.location = [PFGeoPoint geoPointWithLatitude:self.coordinate.latitude longitude:self.coordinate.longitude];
+    reminder.location = [PFGeoPoint geoPointWithLatitude:self.annotation.coordinate.latitude longitude:self.annotation.coordinate.longitude];
     
-    __weak typeof (self) weakSelf = self;
-    if (weakSelf.completion) {
+    if (self.completion) {
         if ([CLLocationManager isMonitoringAvailableForClass:[CLCircularRegion class]]) {
-            CLCircularRegion *region = [[CLCircularRegion alloc]initWithCenter:self.coordinate radius:self.radiusLabel.text.floatValue identifier:reminder.name];
+            CLCircularRegion *region = [[CLCircularRegion alloc]initWithCenter:self.annotation.coordinate radius:self.radiusLabel.text.floatValue identifier:reminder.name];
             [[[LocationController sharedController]locationManager]startMonitoringForRegion:region];
-            weakSelf.completion([MKCircle circleWithCenterCoordinate:self.coordinate radius:self.radiusLabel.text.floatValue]);
+            self.completion([MKCircle circleWithCenterCoordinate:self.annotation.coordinate radius:self.radiusLabel.text.floatValue]);
             
             [[self navigationController]popViewControllerAnimated:YES];
         }

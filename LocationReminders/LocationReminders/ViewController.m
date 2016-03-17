@@ -12,15 +12,19 @@
 #import <Parse/Parse.h>
 #import <ParseUI/ParseUI.h>
 
+
 @import MapKit;
 @import CoreLocation;
 
 
 
-@interface ViewController () <MKMapViewDelegate, PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate>
+@interface ViewController () <MKMapViewDelegate, PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate, LocationControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (strong, nonatomic) CLLocationManager* locationManager;
+
+
+- (IBAction)locationButtons:(UIButton *)sender;
 
 
 @end
@@ -40,11 +44,19 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [[[LocationController sharedController]delegate]self];
+    [[LocationController sharedController]setDelegate:self];
     [[[LocationController sharedController]locationManager]startUpdatingLocation];
-    
       
 }
+
+-(void)locationControllerDidUpdateLocation:(CLLocation *)location
+{
+    
+    CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude);
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coordinate, 500, 500);
+    [_mapView setRegion:region animated:TRUE];
+}
+
 
 -(void)viewWillDisappear:(BOOL)animated
 {
@@ -105,32 +117,6 @@
     self.mapView.showsUserLocation = YES;
 }
 
-- (IBAction)spaceNeedleButtonSelected:(UIButton *)sender
-{
-
-    CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(47.6204 , -122.349348);
-    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coordinate, 500, 500);
-    [_mapView setRegion:region animated:TRUE];
-    
-
-}
-
-- (IBAction)statueOfLibertyButtonSelected:(UIButton *)sender
-{
-
-    CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(40.689247, -74.044502);
-    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coordinate, 50, 500);
-    [_mapView setRegion:region animated: TRUE];
-}
-
-
-- (IBAction)grandCanyonButtonSelected:(UIButton *)sender
-{
-    CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(36.056595, -112.125092);
-    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coordinate, 500, 500);
-    [_mapView setRegion:region animated:TRUE];
-
-}
 
 #pragma mark - MKMapViewDelegate
 
@@ -157,7 +143,7 @@
 
 -(void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
 {
-    [self performSegueWithIdentifier:@"DetailViewController" sender: view];
+    [self performSegueWithIdentifier:@"DetailViewController" sender: view.annotation];
    
 }
 
@@ -169,7 +155,6 @@
         MKPointAnnotation *newPoint = [[MKPointAnnotation alloc]init];
         newPoint.coordinate = coordinate;
         newPoint.title = @"New Location";
-
         
         [self.mapView addAnnotation: newPoint];
     }
@@ -179,13 +164,13 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"DetailViewController"]) {
-        if ([sender isKindOfClass:[MKAnnotationView class]]) {
-            MKAnnotationView *annotationView = (MKAnnotationView *)sender;
+        if ([sender isKindOfClass:[MKPointAnnotation class]]) {
+            MKPointAnnotation *annotation = (MKPointAnnotation *)sender;
             DetailViewController *detailViewController = (DetailViewController *)segue.destinationViewController;
-            detailViewController.annotationTitle = annotationView.annotation.title;
-            detailViewController.coordinate = annotationView.annotation.coordinate;
+            detailViewController.annotation = annotation;
+            __weak typeof(self) weakSelf = self;
             detailViewController.completion = ^(MKCircle *circle){
-                [self.mapView addOverlay:circle];
+                [weakSelf.mapView addOverlay:circle];
 
             };
         }
@@ -206,4 +191,24 @@
 }
 
 
+- (IBAction)locationButtons:(UIButton *)sender
+{
+    NSString *locationPointers = [sender currentTitle];
+    CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(0.0, 0.0);
+    
+    if ([locationPointers isEqualToString:@"Space Needle"]) {
+        
+        coordinate = CLLocationCoordinate2DMake(47.6204 , -122.349348);
+        
+    } else if([locationPointers isEqualToString:@"Statue of Liberty"]) {
+        coordinate = CLLocationCoordinate2DMake(40.689247, -74.044502);
+        
+    } else if ([locationPointers isEqualToString:@"Grand Canyon"]) {
+        coordinate = CLLocationCoordinate2DMake(36.056595, -112.125092);
+    }
+    
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coordinate, 500, 500);
+    [_mapView setRegion:region animated:TRUE];
+
+}
 @end

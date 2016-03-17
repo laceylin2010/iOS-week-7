@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF38648A1C9A187900EE71BD /* Wednesday.m in Sources */ = {isa = PBXBuildFile; fileRef = AF3864891C9A187900EE71BD /* Wednesday.m */; };
 		AF5F864A1C9720270086CA82 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AF5F86491C9720270086CA82 /* main.m */; };
 		AF5F864D1C9720270086CA82 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AF5F864C1C9720270086CA82 /* AppDelegate.m */; };
 		AF5F86501C9720270086CA82 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF5F864F1C9720270086CA82 /* ViewController.m */; };
@@ -40,6 +41,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AF3864881C9A187900EE71BD /* Wednesday.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Wednesday.h; sourceTree = "<group>"; };
+		AF3864891C9A187900EE71BD /* Wednesday.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Wednesday.m; sourceTree = "<group>"; };
 		AF5F86451C9720270086CA82 /* LocationReminders.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocationReminders.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF5F86491C9720270086CA82 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AF5F864B1C9720270086CA82 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -114,9 +117,12 @@
 		AF5F863C1C9720270086CA82 = {
 			isa = PBXGroup;
 			children = (
-				AF5F86811C97215E0086CA82 /* Frameworks */,
-				AF5F86471C9720270086CA82 /* LocationReminders */,
 				AF5F86461C9720270086CA82 /* Products */,
+				AF5F86811C97215E0086CA82 /* Frameworks */,
+				AF8E93FC1C99B33500E2F723 /* Controllers */,
+				AF5F86481C9720270086CA82 /* Supporting Files */,
+				AF5F86471C9720270086CA82 /* LocationReminders */,
+				AF5F868C1C9765F90086CA82 /* Code Challenges */,
 			);
 			sourceTree = "<group>";
 		};
@@ -137,13 +143,10 @@
 				AF8E93F71C98A17E00E2F723 /* LocationController.m */,
 				AF5F864B1C9720270086CA82 /* AppDelegate.h */,
 				AF5F864C1C9720270086CA82 /* AppDelegate.m */,
-				AF8E93FC1C99B33500E2F723 /* Controllers */,
 				AF5F86511C9720270086CA82 /* Main.storyboard */,
 				AF5F86541C9720270086CA82 /* Assets.xcassets */,
 				AF5F86561C9720270086CA82 /* LaunchScreen.storyboard */,
 				AF5F86591C9720270086CA82 /* Info.plist */,
-				AF5F86481C9720270086CA82 /* Supporting Files */,
-				AF5F868C1C9765F90086CA82 /* Code Challenges */,
 			);
 			path = LocationReminders;
 			sourceTree = "<group>";
@@ -154,6 +157,7 @@
 				AF5F86491C9720270086CA82 /* main.m */,
 			);
 			name = "Supporting Files";
+			path = LocationReminders;
 			sourceTree = "<group>";
 		};
 		AF5F86811C97215E0086CA82 /* Frameworks */ = {
@@ -191,8 +195,11 @@
 				AF5F869D1C9780870086CA82 /* Queue.m */,
 				AF8E93F91C98CD1D00E2F723 /* Anagrams.h */,
 				AF8E93FA1C98CD1D00E2F723 /* Anagrams.m */,
+				AF3864881C9A187900EE71BD /* Wednesday.h */,
+				AF3864891C9A187900EE71BD /* Wednesday.m */,
 			);
 			name = "Code Challenges";
+			path = LocationReminders;
 			sourceTree = "<group>";
 		};
 		AF8E93FC1C99B33500E2F723 /* Controllers */ = {
@@ -204,6 +211,7 @@
 				AF8E93F41C989A1600E2F723 /* DetailViewController.m */,
 			);
 			name = Controllers;
+			path = LocationReminders;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -290,6 +298,7 @@
 				AF5F86501C9720270086CA82 /* ViewController.m in Sources */,
 				AF8E93FF1C99D0EE00E2F723 /* Reminder.m in Sources */,
 				AF5F86A11C97B8DE0086CA82 /* ListItem.m in Sources */,
+				AF38648A1C9A187900EE71BD /* Wednesday.m in Sources */,
 				AF5F864D1C9720270086CA82 /* AppDelegate.m in Sources */,
 				AF8E93F81C98A17E00E2F723 /* LocationController.m in Sources */,
 				AF5F86981C9778720086CA82 /* Stack.m in Sources */,

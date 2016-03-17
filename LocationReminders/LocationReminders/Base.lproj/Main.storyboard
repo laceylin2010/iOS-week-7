@@ -32,7 +32,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <state key="normal" title="Space Needle"/>
                                 <connections>
-                                    <action selector="spaceNeedleButtonSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="i7B-cp-Rw8"/>
+                                    <action selector="locationButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vva-As-Cej"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="752" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wei-uR-2kf">
@@ -43,7 +43,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <state key="normal" title="Grand Canyon"/>
                                 <connections>
-                                    <action selector="grandCanyonButtonSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8IQ-0N-YYN"/>
+                                    <action selector="locationButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Aer-WQ-F8G"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yxu-Kr-wJL">
@@ -54,7 +54,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <state key="normal" title="Statue of Liberty"/>
                                 <connections>
-                                    <action selector="statueOfLibertyButtonSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LqT-Un-DCs"/>
+                                    <action selector="locationButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YZ0-2y-ows"/>
                                 </connections>
                             </button>
                         </subviews>
