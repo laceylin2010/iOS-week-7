@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "LocationController.h"
 #import "DetailViewController.h"
+#import "Reminder.h"
 #import <Parse/Parse.h>
 #import <ParseUI/ParseUI.h>
 
@@ -35,6 +36,7 @@
     [self login];
     [self setupMapView];
     [self.mapView setDelegate:self];
+    [self getReminders];
     
 
 }
@@ -44,6 +46,7 @@
     [super viewWillAppear:animated];
     [[LocationController sharedController]setDelegate:self];
     [[[LocationController sharedController]locationManager]startUpdatingLocation];
+
       
 }
 
@@ -115,6 +118,26 @@
     self.mapView.showsUserLocation = YES;
 }
 
+-(void)getReminders
+{
+    PFQuery *query = [PFQuery queryWithClassName:@"Reminder"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        if (error == nil && objects) {
+         
+        }
+        for (Reminder *object in objects) {
+            CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(object.location.latitude, object.location.longitude);
+            MKPointAnnotation *newPoint = [[MKPointAnnotation alloc]init];
+            MKCircle *circle = [MKCircle circleWithCenterCoordinate:coordinate radius: object.radius.floatValue];
+            
+            newPoint.coordinate = coordinate;
+            newPoint.title = newPoint.title;
+
+            [self.mapView addAnnotation: newPoint];
+            [self.mapView addOverlay:circle];
+        }
+    }];
+}
 
 #pragma mark - MKMapViewDelegate
 
@@ -209,4 +232,6 @@
     [_mapView setRegion:region animated:TRUE];
 
 }
+
+
 @end
