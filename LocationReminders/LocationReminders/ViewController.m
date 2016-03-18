@@ -131,6 +131,7 @@
             MKCircle *circle = [MKCircle circleWithCenterCoordinate:coordinate radius: object.radius.floatValue];
             
             newPoint.coordinate = coordinate;
+//            newPoint.
              //adding title to the pin
             //add to reminders if noting exists
 

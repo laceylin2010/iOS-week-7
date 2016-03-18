@@ -55,10 +55,10 @@ dispatch_once(&onceToken, ^{
 
     NSLog(@"User entered Region");
     UILocalNotification *localNotification = [[UILocalNotification alloc]init];
-//    MKAnnotationView *title = [[MKAnnotationView alloc]init];
+    
 
-    localNotification.alertTitle = @"You entered the matrix";
-    localNotification.alertBody = @"remember the matrix is not real";
+    localNotification.alertTitle = @"User entered region";
+    localNotification.alertBody = @"Don't forget to complete the/(title)";
     [[UIApplication sharedApplication]presentLocalNotificationNow: localNotification];
     
 }
